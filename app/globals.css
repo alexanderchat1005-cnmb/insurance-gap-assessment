@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+/* ───────────────────────────────────────────────
+   柏泰 Better brand palette
+   Primary: deep teal #005956
+   Accent:  peach     #F0AD90
+   ─────────────────────────────────────────────── */
+
+@theme inline {
+  --color-teal: #005956;
+  --color-teal-dark: #003f3d;
+  --color-teal-mid: #287370;
+  --color-teal-soft: #79a8a6;
+  --color-teal-pale: #a5c4c3;
+  --color-teal-bg: #edf3f3;
+
+  --color-peach: #f0ad90;
+  --color-peach-dark: #d88870;
+  --color-peach-soft: #f7cdb8;
+  --color-peach-bg: #fcefe8;
+
+  --color-cream: #fbf7f2;
+
+  --color-alarm: #b23a48;
+  --color-alarm-bg: #fce8eb;
+  --color-warning: #d88870;
+  --color-warning-bg: #fcefe8;
+  --color-caution: #c9a961;
+  --color-ok: #287370;
+
+  --color-gray-50: #fafafa;
+  --color-gray-100: #f5f5f5;
+  --color-gray-200: #eeeeee;
+  --color-gray-300: #e0e0e0;
+  --color-gray-400: #bdbdbd;
+  --color-gray-500: #9e9e9e;
+  --color-gray-600: #757575;
+  --color-gray-700: #616161;
+  --color-gray-800: #424242;
+  --color-gray-900: #212121;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+  overscroll-behavior: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB",
+    "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+  background: #ffffff;
+  color: #212121;
+}
