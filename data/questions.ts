@@ -5,7 +5,7 @@ import { Question } from "./types";
 // Normalized 0-100 at the end; gap = 100 - score.
 
 export const questions: Question[] = [
-  // ═══ Part 1: 💸 月光打工人日常 (Q1–Q3) ═══
+  // ═══ Part 1: 💸 月光打工人日常 (Q1–Q4) ═══
   {
     id: 1, emoji: "💳", section: 1,
     dimension: "wealth", dimensionLabel: "现金流韧性",
@@ -36,10 +36,20 @@ export const questions: Question[] = [
       { label: "C", text: `家庭配置的基础设施，比吃外卖重要 🛡️`, scores: { life: 5, ci: 5, med: 5, wealth: 4, aware: 7 } },
     ],
   },
-
-  // ═══ Part 2: 🏥 健康脆皮实录 (Q4–Q6) ═══
   {
-    id: 4, emoji: "🫣", section: 2,
+    id: 4, emoji: "💰", section: 1,
+    dimension: "wealth", dimensionLabel: "保费预算",
+    text: `你每年花在保险上的预算——`,
+    options: [
+      { label: "A", text: `保险？我每个月的钱已经不够花了，不想再加一笔 💸`, scores: { life: 0, ci: 0, med: 0, wealth: 1, aware: 1 } },
+      { label: "B", text: `就买了个意外险/平安福之类的，几百块图个心安 🎐`, scores: { life: 2, ci: 2, med: 2, wealth: 2, aware: 3 } },
+      { label: "C", text: `年收入 5-10% 固定划给保费，险种按家庭角色分配好 📊`, scores: { life: 5, ci: 5, med: 5, wealth: 6, aware: 8 } },
+    ],
+  },
+
+  // ═══ Part 2: 🏥 健康脆皮实录 (Q5–Q8) ═══
+  {
+    id: 5, emoji: "🫣", section: 2,
     dimension: "med", dimensionLabel: "体检习惯",
     text: `你上次体检是什么时候？`,
     options: [
@@ -49,7 +59,7 @@ export const questions: Question[] = [
     ],
   },
   {
-    id: 5, emoji: "🏨", section: 2,
+    id: 6, emoji: "🏨", section: 2,
     dimension: "med", dimensionLabel: "医疗承受力",
     text: `如果你突然住院10天，需要自费5万，你的反应是——`,
     options: [
@@ -59,7 +69,7 @@ export const questions: Question[] = [
     ],
   },
   {
-    id: 6, emoji: "🧬", section: 2,
+    id: 7, emoji: "🧬", section: 2,
     dimension: "ci", dimensionLabel: "重疾储备",
     text: `如果医生明天告诉你"需要动大手术+休养2年"，你会——`,
     options: [
@@ -68,10 +78,20 @@ export const questions: Question[] = [
       { label: "C", text: `重疾险一次性赔50万，家里日子照常过，我安心养病 🛡️💰`, scores: { life: 6, ci: 8, med: 5, wealth: 4, aware: 7 } },
     ],
   },
-
-  // ═══ Part 3: 👨‍👩‍👧 家庭角色扮演 (Q7–Q9) ═══
   {
-    id: 7, emoji: "🗿", section: 3,
+    id: 8, emoji: "💳", section: 2,
+    dimension: "med", dimensionLabel: "医疗结算方式",
+    text: `上次去医院/药店结账，最后是怎么掏的钱？`,
+    options: [
+      { label: "A", text: `全自费。刷花呗的时候才想起来：我医保卡好像没激活？🫠`, scores: { life: 0, ci: 0, med: 0, wealth: 0, aware: 0 } },
+      { label: "B", text: `医保刷一下，自费部分自己掏。百万医疗？听过，没买 🏥`, scores: { life: 2, ci: 2, med: 2, wealth: 2, aware: 3 } },
+      { label: "C", text: `医保+百万医疗双报销，门诊医保走，住院自费部分我几乎没掏 ✨`, scores: { life: 4, ci: 4, med: 8, wealth: 3, aware: 7 } },
+    ],
+  },
+
+  // ═══ Part 3: 👨‍👩‍👧 家庭角色扮演 (Q9–Q12) ═══
+  {
+    id: 9, emoji: "🗿", section: 3,
     dimension: "life", dimensionLabel: "家庭责任",
     text: `你家里谁在赚钱？`,
     options: [
@@ -81,7 +101,7 @@ export const questions: Question[] = [
     ],
   },
   {
-    id: 8, emoji: "🥡", section: 3,
+    id: 10, emoji: "🥡", section: 3,
     dimension: "life", dimensionLabel: "身后事规划",
     text: `你对"如果我不在了，家里怎么办"这件事的思考程度——`,
     options: [
@@ -91,7 +111,7 @@ export const questions: Question[] = [
     ],
   },
   {
-    id: 9, emoji: "👨‍⚕️", section: 3,
+    id: 11, emoji: "👨‍⚕️", section: 3,
     dimension: "med", dimensionLabel: "父母保障",
     text: `你爸妈的医保情况——`,
     options: [
@@ -100,10 +120,20 @@ export const questions: Question[] = [
       { label: "C", text: `职工医保 + 百万医疗 + 防癌险，我盯着给他们安排的 🛡️`, scores: { life: 5, ci: 6, med: 7, wealth: 4, aware: 8 } },
     ],
   },
-
-  // ═══ Part 4: 🌙 深夜财富焦虑 (Q10–Q11) ═══
   {
-    id: 10, emoji: "📉", section: 4,
+    id: 12, emoji: "👨‍👩‍👧", section: 3,
+    dimension: "life", dimensionLabel: "家人保障",
+    text: `除了你自己，家里其他人（配偶/小孩）的保障情况——`,
+    options: [
+      { label: "A", text: `我自己都没保，别人更顾不上 🫠（或：我单身/DINK，不用考虑）`, scores: { life: 0, ci: 0, med: 0, wealth: 0, aware: 1 } },
+      { label: "B", text: `给小孩买了学平险、给对象买了意外险，几百块图个心安 🎐`, scores: { life: 2, ci: 2, med: 3, wealth: 2, aware: 4 } },
+      { label: "C", text: `按角色系统配置：小孩重疾+医疗、配偶对等保额+定期寿 👨‍👩‍👧`, scores: { life: 7, ci: 6, med: 6, wealth: 4, aware: 8 } },
+    ],
+  },
+
+  // ═══ Part 4: 🌙 深夜财富焦虑 (Q13–Q16) ═══
+  {
+    id: 13, emoji: "📉", section: 4,
     dimension: "wealth", dimensionLabel: "资产配置",
     text: `深夜打开资产账户，你的画面是——`,
     options: [
@@ -113,7 +143,7 @@ export const questions: Question[] = [
     ],
   },
   {
-    id: 11, emoji: "👵", section: 4,
+    id: 14, emoji: "👵", section: 4,
     dimension: "wealth", dimensionLabel: "养老准备",
     text: `说到"60岁退休后的生活"，你脑海里的画面是——`,
     options: [
@@ -122,10 +152,30 @@ export const questions: Question[] = [
       { label: "C", text: `年金险+养老金计算器算过，月领金额够吃海底捞 🍲🛏️`, scores: { life: 4, ci: 3, med: 3, wealth: 8, aware: 7 } },
     ],
   },
-
-  // ═══ Part 5: 🪞 自我认知拷问 (Q12–Q13) ═══
   {
-    id: 12, emoji: "🎲", section: 5,
+    id: 15, emoji: "🎁", section: 4,
+    dimension: "wealth", dimensionLabel: "财富传承",
+    text: `"给下一代留点什么"这件事，你的进度是——`,
+    options: [
+      { label: "A", text: `留债不留遗产，能还清房贷就阿弥陀佛 🙏`, scores: { life: 0, ci: 0, med: 0, wealth: 0, aware: 1 } },
+      { label: "B", text: `想给孩子留点，但买房还是存钱，纠结中 🌀`, scores: { life: 2, ci: 2, med: 2, wealth: 3, aware: 4 } },
+      { label: "C", text: `教育金+年金险+指定受益人，传承路径清晰，税务也考虑过 📊`, scores: { life: 5, ci: 3, med: 3, wealth: 8, aware: 7 } },
+    ],
+  },
+  {
+    id: 16, emoji: "⚡", section: 4,
+    dimension: "aware", dimensionLabel: "意外防御",
+    text: `你对"意外"这件事的防御等级——`,
+    options: [
+      { label: "A", text: `坐家里能有啥意外？电梯不停我就谢天谢地 🚪`, scores: { life: 0, ci: 0, med: 0, wealth: 0, aware: 0 } },
+      { label: "B", text: `出差/旅游前临时买一张意外险，回来就忘了 ✈️`, scores: { life: 2, ci: 1, med: 2, wealth: 1, aware: 3 } },
+      { label: "C", text: `长期意外险一直续保，骑电动车/通勤/加班场景都在内 🛡️`, scores: { life: 5, ci: 3, med: 4, wealth: 2, aware: 7 } },
+    ],
+  },
+
+  // ═══ Part 5: 🪞 自我认知拷问 (Q17–Q20) ═══
+  {
+    id: 17, emoji: "🎲", section: 5,
     dimension: "aware", dimensionLabel: "风险态度",
     text: `"坏事不会发生在我身上"这句话——`,
     options: [
@@ -135,13 +185,33 @@ export const questions: Question[] = [
     ],
   },
   {
-    id: 13, emoji: "📋", section: 5,
+    id: 18, emoji: "📋", section: 5,
     dimension: "aware", dimensionLabel: "保单体检",
     text: `你现在买过的保险——`,
     options: [
       { label: "A", text: `一份都没有。买菜都嫌贵，买这个？下次吧。📭`, scores: { life: 0, ci: 0, med: 0, wealth: 0, aware: 1 } },
       { label: "B", text: `有，但是我爸妈/对象给买的，具体啥我也不知道，保单我找不到 📄❓`, scores: { life: 3, ci: 3, med: 3, wealth: 2, aware: 2 } },
       { label: "C", text: `重疾+医疗+寿险+意外，一年保费预算固定，定期检视 📊✅`, scores: { life: 7, ci: 7, med: 7, wealth: 5, aware: 9 } },
+    ],
+  },
+  {
+    id: 19, emoji: "🧾", section: 5,
+    dimension: "aware", dimensionLabel: "理赔经验",
+    text: `说到"保险理赔"——`,
+    options: [
+      { label: "A", text: `理赔？我连理赔电话打哪都不知道，反正没出过事 📞❓`, scores: { life: 1, ci: 1, med: 1, wealth: 1, aware: 1 } },
+      { label: "B", text: `报过一次，资料补了三次还被卡，对保险信任-100 😤`, scores: { life: 2, ci: 2, med: 2, wealth: 2, aware: 4 } },
+      { label: "C", text: `理赔过，流程我熟；哪家快哪家卡，心里一本帐 ✅`, scores: { life: 4, ci: 4, med: 4, wealth: 3, aware: 8 } },
+    ],
+  },
+  {
+    id: 20, emoji: "🩺", section: 5,
+    dimension: "ci", dimensionLabel: "健康告知",
+    text: `如果现在要买一份重疾险，健康告知你能顺利过吗？`,
+    options: [
+      { label: "A", text: `健康告知是啥？买保险不就是扫码付款吗？📱❓`, scores: { life: 0, ci: 0, med: 0, wealth: 0, aware: 0 } },
+      { label: "B", text: `有结节/三高/旧疾，估计要加费或除外，越来越难买 😬`, scores: { life: 1, ci: 1, med: 1, wealth: 1, aware: 5 } },
+      { label: "C", text: `趁年轻健康时就配了，告知全通过，保费锁在低位 🎯`, scores: { life: 4, ci: 7, med: 4, wealth: 3, aware: 8 } },
     ],
   },
 ];
